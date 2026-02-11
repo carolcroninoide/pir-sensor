@@ -5,6 +5,7 @@ basic.forever(function () {
     if (reading == 1) {
         pins.digitalWritePin(DigitalPin.P1, 1)
         music.play(music.builtinPlayableSoundEffect(soundExpression.slide), music.PlaybackMode.UntilDone)
+        datalogger.log(datalogger.createCV("motion", reading))
     } else {
         pins.digitalWritePin(DigitalPin.P1, 0)
     }
